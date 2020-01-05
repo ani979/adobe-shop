@@ -7,7 +7,7 @@ class SortMobileComponent extends Component {
     constructor(props){
         super(props);
         this.state = {
-            sortType:"HighToLow"
+            sortType:props.filters.sortBy
         }
     }
 
@@ -42,11 +42,11 @@ class SortMobileComponent extends Component {
                         </div>
                     </form>    
                 </span>
-                <div class="row mb1r">
+                <div class="row">
                         <div className = "col-12 col-xl-2">
                             <div class = "row">
                                     <div className = "col-6 b1grey cen fs1p2r p1">
-                                        <button className="nude-button" onClick={() => {
+                                        <button className="nude-button adBlue" onClick={() => {
                                                 this.props.filterSort(this.state.sortType)
                                                 this.props.close()
                                             }
@@ -54,7 +54,7 @@ class SortMobileComponent extends Component {
                                         
                                     </div>
                                     <div className = "col-6 b1grey cen fs1p2r p1">
-                                        <button className="nude-button" onClick={() => {
+                                        <button className="nude-button adBlue" onClick={() => {
                                                 this.props.close()
                                             }
                                         }>Cancel</button>

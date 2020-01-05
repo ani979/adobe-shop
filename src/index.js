@@ -8,7 +8,7 @@ import store from './store';
 import { getAllProducts } from './actions';
 import Layout from './components/app';
 import Shop from './components/pages/shop'
-import CartComponent from './components/containers/cart-component';
+import CartComponent from './components/containers/cart-checkout';
 
 export default function Root() {
     store.dispatch(getAllProducts());

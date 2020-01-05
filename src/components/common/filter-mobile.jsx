@@ -10,9 +10,9 @@ function FilterMobileComponent(props) {
     const [value, setValue] = useState({min:filters.value.min, max:filters.value.max});
 
     return (
-        <div className="mt1r slidecontainer">
+        <div className="mt1r">
             <h6 className="cen"> <b>Filters </b></h6>
-                <div className = "mt2r">
+                <div className = " slidecontainer mt2r">
                     <InputRange
                         formatLabel={value => `${symbol}${value}`}
                         maxValue={1000}
@@ -21,27 +21,28 @@ function FilterMobileComponent(props) {
                         onChange={(value) => setValue(value)} 
                     />
                     <p className="cen" style={{color:"grey", fontWeight:"400"}}>Price</p>
-                    <div class="row mb1r">
-                        <div className = "col-12 col-xl-2">
-                            <div class = "row">
-                                    <div className = "col-6 b1grey cen fs1p2r p1">
-                                        <button className="nude-button" onClick={() => {
-                                                props.filterPrice(value)
-                                                props.close()
-                                            }
-                                        }>Apply</button>
-                                        
-                                    </div>
-                                    <div className = "col-6 b1grey cen fs1p2r p1">
-                                        <button className="nude-button" onClick={() => {
-                                                props.close()
-                                            }
-                                        }>Cancel</button>
-                                    </div>
-                                </div>   
-                            </div>
-                        </div>    
-                    </div>
+                        
+                </div>
+                <div class="row">
+                    <div className = "col-12 col-xl-2">
+                        <div class = "row">
+                                <div className = "col-6 b1grey cen fs1p2r p1">
+                                    <button className="nude-button adBlue" onClick={() => {
+                                            props.filterPrice(value)
+                                            props.close()
+                                        }
+                                    }>Apply</button>
+                                    
+                                </div>
+                                <div className = "col-6 b1grey cen fs1p2r p1">
+                                    <button className="nude-button adBlue" onClick={() => {
+                                            props.close()
+                                        }
+                                    }>Cancel</button>
+                                </div>
+                            </div>   
+                        </div>
+                </div>
         </div>
     )
 }

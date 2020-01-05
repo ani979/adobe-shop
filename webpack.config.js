@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const webpack = require('webpack');
 var path = require('path');
 module.exports = (env, argv) => ({
@@ -83,5 +84,39 @@ module.exports = (env, argv) => ({
     resolve: {
         modules: ['node_modules', 'bower_components'],
         extensions: ['.js', '.jsx', '.scss', '.css']
-      },
+    },
+    optimization: {
+        splitChunks: { 
+            chunks: "all",
+            minSize: 30000,
+            maxSize: 0,
+            minChunks: 1,
+            name:true,
+            cacheGroups: {// Cache Group
+                commons: {
+                  name: 'vendors',
+                  chunks: 'initial',
+                  minChunks: 2
+                },
+                vendors: {
+                    test: /[\/]node_modules[\/]/,
+                    priority: -10,
+                },
+                default: {
+                    minChunks: 2,
+                    priority: -20,
+                    reuseExistingChunk: true
+                },
+            }
+        },
+        minimizer: [
+          new UglifyJSPlugin({
+            uglifyOptions: {
+                mangle: {
+                  keep_fnames: true,
+                },
+              },
+          }),
+        ],
+    },
 });

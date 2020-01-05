@@ -100,17 +100,9 @@ body {
   min-height: 88vh;
 }
 
-.cart-desc {
-    flex-direction: column;
-    padding: 1rem;
-    justify-content: space-around;
-}
-
 .qty-box {
     align-self: center;
     .input-group {
-      justify-content: center;
-      background:white;;
       span {
         button {
           background: white !important;
@@ -136,6 +128,10 @@ body {
         padding-right: 0;
       }
     }
+    input {
+      border: 1px solid black;
+      text-align: center;
+    }  
   }
 
 .input-number {
@@ -143,6 +139,7 @@ body {
 }
 
 .remove-box {
+  padding-top:1rem;
     align-self: center;
 }
 

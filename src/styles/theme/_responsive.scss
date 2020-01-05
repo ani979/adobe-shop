@@ -5,6 +5,34 @@
     }
 
     .sort-box {
-      padding: 1rem;
+      padding-left: 1rem;
+      padding-top: 1rem;
     }
+    .pl1-md-down {
+      padding-left:0.5rem !important;
+    }
+    .cart-desc {
+      flex-direction: column;
+      padding: 1rem;
+      justify-content: space-between;
+    }
+}
+
+@media (min-width:1025px) {
+  
+  .pl2-md-up {
+    padding-left:2rem !important;
+  }
+  .disflex-md-up {
+    display: flex;
+  }
+  .cart-desc-md-up {
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-around;
+  }
+  .qty-box .input-group {
+    justify-content: center;
+    background: white;
+  }
 }
