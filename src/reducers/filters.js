@@ -25,7 +25,8 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
             return {
                 ...state,
                 sortBy: filtersReducerDefaultState.sortBy,
-                value: filtersReducerDefaultState.value
+                value: filtersReducerDefaultState.value,
+                searchText:""
             };
         
         case types.SEARCH:

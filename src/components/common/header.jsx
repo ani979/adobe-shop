@@ -4,7 +4,7 @@ import './index.scss'
 import CartContainer from '../containers/cart';
 import SearchComponent from '../containers/search';
 
-export default function Header() {
+export default function Header(props) {
     return (
         <div className="top-header sticky"  id="sticky" >
             <div className = "p1">
@@ -20,7 +20,7 @@ export default function Header() {
                         </Link>
                     </span>    
                     <span className="pull-right disflex">
-                        <SearchComponent/>   
+                        <SearchComponent/>  
                         <CartContainer/>
                     </span> 
                 </div>    
