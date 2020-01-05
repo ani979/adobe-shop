@@ -47,7 +47,7 @@ class CartComponent extends Component {
                         </div>
                 </section>
                 :
-                <section className="cart-section section-b-space">
+                <section className="cart-display section-b-space">
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-12">
