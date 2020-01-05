@@ -1,11 +1,12 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
 var path = require('path');
 module.exports = {
     entry: "./src/",
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'index_bundle.js',
-        publicPath: '/'
+        filename: '[name].[hash].bundle.js',
+        publicPath: ''
     },
     module: {
         rules: [
@@ -73,6 +74,10 @@ module.exports = {
         new HtmlWebPackPlugin({
             inject: true,
             template: "index.html",
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production'),
+            'process.env.PUBLIC_URL': JSON.stringify(''),
         }),
     ],
     resolve: {

@@ -2,7 +2,7 @@ export const getVisibleproducts = (data, {value, sortBy, searchText}) => {
     return data.products.filter(product => {
         const startPriceMatch = typeof value.min !== 'number' || value.min <= product.price;
         const endPriceMatch = typeof value.max !== 'number' || product.price <= value.max;
-        const foundItem = searchText != "" ? product.name.toLowerCase().indexOf(searchText.toLowerCase()) != -1: true;
+        const foundItem = searchText ? product.name.toLowerCase().indexOf(searchText.toLowerCase()) != -1: true;
         return startPriceMatch && endPriceMatch && foundItem;
     }).sort((product1, product2) => {
         if (sortBy === 'HighToLow') {

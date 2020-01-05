@@ -12,13 +12,14 @@ import CartComponent from './components/containers/cart-component';
 
 export default function Root() {
     store.dispatch(getAllProducts());
+    console.log("process.env" ,process.env);
     return (
         <Provider store={store}>
-            <BrowserRouter basename={'/'} >
+            <BrowserRouter basename={"/"} >
                 <Layout>
                     <Switch>
-                        <Route exact path={"/"} component={Shop}/>
-                        <Route exact path={"/cart"} component={CartComponent}/>
+                        <Route exact path={`${process.env.PUBLIC_URL}/`} component={Shop}/>
+                        <Route exact path={`${process.env.PUBLIC_URL}/cart`} component={CartComponent}/>
                     </Switch>
                 </Layout>        
             </BrowserRouter>
