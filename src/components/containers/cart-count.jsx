@@ -1,6 +1,6 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
+import React from 'react'
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 import {removeFromCart} from '../../actions'
 import {getCartTotal} from '../../services'
 

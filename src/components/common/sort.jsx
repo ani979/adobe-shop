@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import {filterSort} from '../../actions'
-import {getVisibleproducts} from '../../services';
+import {getVisibleproducts} from '../../services'
 
 class SortComponent extends Component {
     constructor(){

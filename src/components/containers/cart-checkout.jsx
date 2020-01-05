@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import {getCartTotal} from "../../services";
+import {Link} from 'react-router-dom'
+import {getCartTotal} from "../../services"
 import {removeFromCart, incrementQty, decrementQty} from '../../actions'
-import CartListItem from '../component/cart-list-item';
-import TotalPriceComponent from '../component/total-price-display';
+import CartListItem from '../component/cart-list-item'
+import TotalPriceComponent from '../component/total-price-display'
 
 class CartComponent extends Component {
 
@@ -58,7 +59,7 @@ class CartComponent extends Component {
                                             
                                         </h3>
                                         <h4>Explore more, shortlist some items</h4>
-                                        <a href = "/"> GO HOME </a>
+                                        <Link to={`${process.env.PUBLIC_URL}/`}>GO HOME</Link>
                                     </div>
                                 </div>
                             </div>

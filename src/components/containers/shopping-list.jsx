@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-
-import ProductListItem from '../component/product-list-item';
+import ProductListItem from '../component/product-list-item'
 import { addToCart } from '../../actions'
-import {getVisibleproducts} from '../../services';
+import {getVisibleproducts} from '../../services'
 
 class ShoppingListComponent extends Component {
     constructor (props) {
