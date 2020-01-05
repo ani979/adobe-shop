@@ -10,11 +10,13 @@ export default function CartListItem(props) {
     }
     return (
         <div className = "disflex cart-card col-12 col-md-12">
-            <img
-                                    src={product.img_url}
-                                    className="img-fluid"
-                                    alt="" 
-                                    style={{maxWidth:"25%"}}/>
+            <div className = "col-4 col-md-2">
+
+                <img
+                    src={product.img_url}
+                    className="img-fluid"
+                    alt=""/>
+            </div>                            
             <div className = "disflex-md-up cart-desc-md-up col-12 col-md-4">
                 <div>
                 {product.name}
@@ -26,26 +28,26 @@ export default function CartListItem(props) {
                     </span>
                     {discountTag}
                     <div className="qty-box">
-                    <div className="input-group">
-                        <span>
-                            <button type="button" className="btn quantity-left-minus" onClick={() => props.incrementQty(product, 1)} data-type="minus" data-field="">
-                                <i className="fa fa-plus-circle"></i>
-                            </button>
-                        </span>
-                        <input type="text" name="quantity" value={product.qty} readOnly={true} maxLength="2" size="4" />
+                        <div className="input-group">
+                            <span>
+                                <button type="button" className="btn quantity-left-minus" onClick={() => props.incrementQty(product, 1)} data-type="minus" data-field="">
+                                    <i className="fa fa-plus-circle"></i>
+                                </button>
+                            </span>
+                            <input type="text" name="quantity" value={product.qty} readOnly={true} maxLength="2" size="4" />
 
-                        <span>
-                        <button className="btn quantity-right-plus" onClick={() => props.decrementQty(product.id)}  data-type="plus">
-                            <i className="fa fa-minus-circle"></i>
-                        </button>
-                        </span>
+                            <span>
+                            <button className="btn quantity-right-plus" onClick={() => props.decrementQty(product.id)}  data-type="plus">
+                                <i className="fa fa-minus-circle"></i>
+                            </button>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div className = "remove-box">
-                    <a href="#" className="icon" onClick={() => props.removeFromCart(product)} style={{color:"black"}}>
-                                    <b>REMOVE</b>
-                    </a>
-                </div>
+                    <div className = "remove-box">
+                        <a href="#" className="icon" onClick={() => props.removeFromCart(product)} style={{color:"black"}}>
+                                        <b>REMOVE</b>
+                        </a>
+                    </div>
                 </div>    
                  
             </div>    
