@@ -12,10 +12,9 @@ import CartComponent from './components/containers/cart-component';
 
 export default function Root() {
     store.dispatch(getAllProducts());
-    console.log("process.env" ,process.env);
     return (
         <Provider store={store}>
-            <BrowserRouter basename={"/"} >
+            <BrowserRouter basename={"/adobe-shop"} >
                 <Layout>
                     <Switch>
                         <Route exact path={`${process.env.PUBLIC_URL}/`} component={Shop}/>

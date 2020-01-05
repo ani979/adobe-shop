@@ -1,11 +1,11 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack');
 var path = require('path');
-module.exports = {
+module.exports = (env, argv) => ({
     entry: "./src/",
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[hash].bundle.js',
+        filename: `[name]${argv.mode === "development" ? '' : '[chunkhash:8]'}.js`,
         publicPath: ''
     },
     module: {
@@ -84,4 +84,4 @@ module.exports = {
         modules: ['node_modules', 'bower_components'],
         extensions: ['.js', '.jsx', '.scss', '.css']
       },
-};
+});
