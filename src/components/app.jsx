@@ -6,7 +6,7 @@ import Footer from './common/footer';
 
 export default function Layout(props) {
     return (
-        <div>
+        <div className="container-fluid">
             <Header />
             {props.children}
             <Footer/>
